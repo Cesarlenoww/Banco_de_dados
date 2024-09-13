@@ -1,18 +1,54 @@
-Aqui está uma explicação do código do CRUD de ações e preços, bem como as ferramentas utilizadas e como você pode utilizá-lo como projeto no seu currículo.
+Configuração do MongoDB
+Certifique-se de que o MongoDB está em execução em sua máquina local. O MongoDB deve estar disponível na URL padrão: mongodb://localhost:27017.
 
-Ferramentas Utilizadas
-Flask: Flask é um micro framework web para Python. Ele é leve e fácil de usar, ideal para construir APIs e aplicativos web simples.
+Executando o Projeto
+Para executar o sistema, execute o comando:
 
-Como foi usado: O Flask foi usado para criar as rotas HTTP (GET e POST) que controlam o fluxo da aplicação. Cada rota manipula uma operação de CRUD.
-SQLite: SQLite é um banco de dados relacional leve que é ótimo para aplicações pequenas ou que não exigem um servidor de banco de dados separado.
+bash
+Copiar código
+node index.js
+O script irá:
 
-Como foi usado: SQLite foi utilizado como o banco de dados para armazenar as informações das ações e seus preços.
-HTML/CSS: Embora o CSS não esteja presente no exemplo, HTML é utilizado para criar a interface web que o usuário interage para criar, visualizar, atualizar e deletar ações.
+Conectar-se ao MongoDB.
+Criar o banco de dados controle_estoque.
+Criar as coleções produtos e categorias.
+Inserir alguns dados de exemplo nas coleções.
+Exibir os dados inseridos no terminal.
+Estrutura do Projeto
+index.js: Script principal que conecta ao MongoDB, insere e consulta os dados.
+package.json: Arquivo de configuração do Node.js com as dependências.
+Funcionalidades
+Inserir Categorias: Insere categorias como "Eletrônicos" e "Roupas" na coleção categorias.
+Inserir Produtos: Insere produtos como "Smartphone" e "Camiseta" na coleção produtos.
+Consultar Dados: Recupera e exibe todos os produtos e categorias armazenados no banco de dados.
+Exemplo de Saída
+Ao executar o script, a saída será algo como:
 
-Como foi usado: O HTML foi usado para renderizar as páginas que exibem as ações e para criar os formulários de criação e edição de registros.
-Jinja2: Jinja2 é o motor de templates padrão do Flask.
+bash
+Copiar código
+Conectado ao MongoDB
+Produtos:
+[
+  {
+    _id: ObjectId("..."),
+    nome: 'Smartphone',
+    quantidade: 10,
+    preco: 1999.99,
+    categoria: 'Eletrônicos'
+  },
+  {
+    _id: ObjectId("..."),
+    nome: 'Camiseta',
+    quantidade: 50,
+    preco: 29.99,
+    categoria: 'Roupas'
+  }
+]
 
-Como foi usado: Jinja2 foi utilizado para renderizar as variáveis Python diretamente nos arquivos HTML, como as listas de ações.
-SQLite3 (módulo Python): O módulo sqlite3 do Python é usado para se conectar ao banco de dados SQLite.
-
-Como foi usado: A função get_db_connection() utiliza esse módulo para abrir uma conexão com o banco de dados.
+Categorias:
+[
+  { _id: ObjectId("..."), nome: 'Eletrônicos' },
+  { _id: ObjectId("..."), nome: 'Roupas' }
+]
+Fechando a Conexão
+O sistema irá automaticamente fechar a conexão com o MongoDB ao final da execução.
