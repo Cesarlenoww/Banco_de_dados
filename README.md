@@ -69,12 +69,11 @@ ________________________________________________________________________________
 Explicação em Python
 Este código Python usa o MongoDB para criar e gerenciar um sistema simples de controle de estoque, com duas coleções: uma para produtos e outra para categorias.
 
-Passo 1: Conectar ao MongoDB
+Passo 1:Conectar ao MongoDB
 python
 Copiar código
 from pymongo import MongoClient
 
-Conectar ao MongoDB
 client = MongoClient('mongodb://localhost:27017/')
 Aqui, usamos a biblioteca pymongo para conectar ao MongoDB local. MongoClient é o cliente que conecta ao servidor MongoDB rodando na porta padrão (27017).
 
