@@ -4,7 +4,7 @@ Copiar código
 const { MongoClient } = require('mongodb');
 Primeiro, importamos o módulo MongoClient da biblioteca mongodb. Isso permite criar uma conexão com o servidor MongoDB e interagir com o banco de dados.
 
-Passo 2: Conectar ao MongoDB
+Conectar ao MongoDB
 javascript
 Copiar código
 const url = 'mongodb://localhost:27017';
